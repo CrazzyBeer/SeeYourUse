@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.input.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox disable="false" minHeight="469.0" minWidth="423.0" prefHeight="470.0" prefWidth="430.0" styleClass="mainBox" stylesheets="css/application.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.SeeYourUse.MainController">
+<children>
+      <MenuBar fx:id="menuBar" style="-fx-background-color: rgba(0,0,0,0);" styleClass="menuBar">
+         <menus>
+            <Menu fx:id="menuGraph" mnemonicParsing="false" text="Graph">
+              <items>
+                <MenuItem fx:id="startGraphStage" mnemonicParsing="false" onAction="#showGraphStage" style="-fx-background-color: rgba(0,0,0,0);" text="Start graphing window" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Options">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#showOptionsStage" text="Preferences" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#showHelpStage" text="Help window" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+  <HBox alignment="CENTER" fillHeight="true" prefHeight="50.0" prefWidth="428.0">
+    <children>
+      <TextArea fx:id="messageField" focusTraversable="false" prefHeight="49.0" prefWidth="234.0" promptText="What did you do today?" styleClass="messageField" wrapText="true" HBox.hgrow="ALWAYS">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+      </TextArea>
+      <Label fx:id="pointsLabel" alignment="CENTER" contentDisplay="CENTER" minWidth="26.0" opacity="0.3" prefHeight="48.0" prefWidth="44.9998779296875" styleClass="pointsLabel" text="0" textOverrun="CLIP" underline="false" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font size="25.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+            </Label>
+      <Slider fx:id="pointsSlider" blockIncrement="5.0" minorTickCount="5" onMouseDragged="#pointsSliderDragged" orientation="VERTICAL" styleClass="pointsSlider" HBox.hgrow="NEVER">
+        <HBox.margin>
+          <Insets left="5.0" right="5.0" />
+        </HBox.margin>
+      </Slider>
+      <Button fx:id="saveButton" mnemonicParsing="false" onAction="#onSaveClicked" onMouseClicked="#onSaveClicked" prefHeight="48.0" styleClass="saveButton" text="Save" textAlignment="CENTER" textFill="WHITE" HBox.hgrow="NEVER">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+    </children>
+    <VBox.margin>
+      <Insets left="8.0" right="8.0" top="5.0" />
+    </VBox.margin>
+  </HBox>
+      <Separator prefWidth="200.0">
+         <padding>
+            <Insets left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </Separator>
+      <HBox alignment="CENTER">
+         <children>
+            <Label fx:id="history" alignment="CENTER" onMouseClicked="#resetMessagesClicked" opacity="0.54" prefHeight="17.0" styleClass="historyLabel" text="History (All time)" textAlignment="CENTER" HBox.hgrow="NEVER" VBox.vgrow="NEVER">
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Comic Sans MS" size="12.0" />
+               </font>
+               <graphic>
+                  <ImageView fx:id="resetMessages" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/reset.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Label>
+         </children>
+      </HBox>
+      <ScrollPane fitToWidth="true" hbarPolicy="NEVER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="423.0" styleClass="scrollPane" VBox.vgrow="ALWAYS">
+        <content>
+          <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+               <children>
+                  <VBox fx:id="messageBox" layoutX="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="400.0" spacing="10.0" style="-fx-background: rgba(0,0,0,0);" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+               </children>
+            </AnchorPane>
+        </content>
+         <VBox.margin>
+            <Insets left="8.0" right="8.0" />
+         </VBox.margin>
+      </ScrollPane>
+      <HBox VBox.vgrow="NEVER">
+         <children>
+            <Label maxHeight="1.7976931348623157E308" styleClass="findLabel" text="Find" textFill="WHITE" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets left="5.0" />
+               </HBox.margin>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </Label>
+            <TextField fx:id="findField" maxHeight="1.7976931348623157E308" onKeyReleased="#findFieldKeyReleased" promptText="Search for something" styleClass="searchArea" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="8.0" right="8.0" top="5.0" />
+               </VBox.margin>
+            </TextField>
+            <TextField fx:id="pageSelect" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onKeyReleased="#pageSelectKeyReleased" prefHeight="30.0" prefWidth="35.0" styleClass="searchArea" text="1">
+               <HBox.margin>
+                  <Insets left="5.0" />
+               </HBox.margin>
+            </TextField>
+            <Label fx:id="pagesLabel" maxHeight="1.7976931348623157E308" styleClass="pageLabel" text="Page 1/1" />
+         </children>
+         <VBox.margin>
+            <Insets bottom="5.0" left="8.0" right="8.0" top="5.0" />
+         </VBox.margin>
+      </HBox>
+</children>
+</VBox>
