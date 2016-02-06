@@ -1,6 +1,5 @@
 #SeeYourUse
-		This application allows you to post your daily activities and rate them with points of "use". How much has this activity been useful for you?
-		Also, you can create a graph of your use in a specific period of time
+This application allows you to post your daily activities and rate them with points of "use". How much has this activity been useful for you? Also, you can create a graph of your use in a specific period of time
 
 #Built with:
 * **Java**
