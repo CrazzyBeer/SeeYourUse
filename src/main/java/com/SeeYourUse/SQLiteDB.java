@@ -1,5 +1,6 @@
 package com.SeeYourUse;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -27,10 +28,28 @@ public class SQLiteDB {
 
 			Class.forName("org.sqlite.JDBC");
 			c = DriverManager.getConnection("jdbc:sqlite:src/main/resources/DB/SeeYourUse.db");
+			
 
 		} catch (Exception e) {
-			// System.err.println("Couldn't connect to the DB");
+			//System.err.println("Couldn't connect to the DB");
 			e.printStackTrace();
+		} finally {
+			Logger log = new Logger();
+			if (c==null)
+				try {
+					log.log("null\n");
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			else {
+				try {
+					log.log("OK\n");
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
 		}
 		// System.out.println("DB Opened successfully");
 	}
@@ -58,11 +77,12 @@ public class SQLiteDB {
 
 	}
 
+	
 	/**
 	 * Checks whether the table MESSAGES already exists IF not, creates it
 	 */
 	public void init() {
-
+		
 		connect();
 
 		createMessages();

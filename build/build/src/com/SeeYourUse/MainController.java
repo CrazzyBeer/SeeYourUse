@@ -10,6 +10,7 @@ import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -463,6 +464,27 @@ public class MainController {
 		optionsStage.getIcons().add(new Image("/img/options_icon.png"));
 
 		optionsStage.show();
+	}
+
+	/**
+	 * Gets fired when menuItem "Help window" is clicked from the menu on the
+	 * top
+	 */
+	public void showHelpStage() {
+		Stage helpStage = new Stage();
+		Pane root = null;
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/HelpWindow.fxml"));
+			root = loader.load();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		Scene helpScene = new Scene(root);
+		helpScene.getStylesheets().add(getClass().getResource("/css/application.css").toExternalForm());
+		
+		helpStage.setScene(helpScene);
+		helpStage.show();
+		
 	}
 
 	/**
