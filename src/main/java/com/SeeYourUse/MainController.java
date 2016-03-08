@@ -481,6 +481,7 @@ public class MainController {
 		helpScene.getStylesheets().add(getClass().getResource("/css/application.css").toExternalForm());
 		
 		helpStage.setScene(helpScene);
+		helpStage.setResizable(false);
 		helpStage.show();
 		
 	}

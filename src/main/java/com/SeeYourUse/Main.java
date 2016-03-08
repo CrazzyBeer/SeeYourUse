@@ -1,10 +1,5 @@
 package com.SeeYourUse;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.io.StringWriter;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -15,7 +10,7 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 	@Override
-	public void start(Stage primaryStage) throws IOException {
+	public void start(Stage primaryStage) {
 		try {
 			
 			SQLiteDB db = new SQLiteDB();
@@ -44,8 +39,7 @@ public class Main extends Application {
 
 		} catch (Exception e) {
 			e.printStackTrace();
-		
-		}
+		} 
 	}
 
 	public static void main(String[] args) {

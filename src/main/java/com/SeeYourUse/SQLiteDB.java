@@ -27,29 +27,14 @@ public class SQLiteDB {
 		try {
 
 			Class.forName("org.sqlite.JDBC");
-			c = DriverManager.getConnection("jdbc:sqlite:src/main/resources/DB/SeeYourUse.db");
+			c = DriverManager.getConnection("jdbc:sqlite:SeeYourUse.sqlite");
 			
 
 		} catch (Exception e) {
 			//System.err.println("Couldn't connect to the DB");
 			e.printStackTrace();
-		} finally {
-			Logger log = new Logger();
-			if (c==null)
-				try {
-					log.log("null\n");
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			else {
-				try {
-					log.log("OK\n");
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}
+			Logger.logErr(e);
+			
 		}
 		// System.out.println("DB Opened successfully");
 	}
@@ -114,7 +99,8 @@ public class SQLiteDB {
 		} catch (SQLException e) {
 
 			e.printStackTrace();
-
+			Logger.logErr(e);
+			
 		} finally {
 
 			close();
