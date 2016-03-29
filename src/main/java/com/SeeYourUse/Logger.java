@@ -1,39 +1,19 @@
 package com.SeeYourUse;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.io.StringWriter;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 
 public class Logger {
-	static File file;
-	static FileWriter fw;
-	
-	public Logger() {}
-	
-	public static void log(String text) throws IOException {
-		fw = new FileWriter("logy.txt",true);
-		fw.write(text);
-		close();
+	public static void error(String text) {
+		Alert alert = new Alert(AlertType.ERROR);
+		alert.setHeaderText("Ooooups...");
+		alert.setContentText(text);
+		alert.show();
 	}
-	public static void logErr(Exception e) {
-
-		StringWriter sw = new StringWriter();
-		PrintWriter pw = new PrintWriter(sw);
-		e.printStackTrace(pw);
-		
-		try {
-			fw = new FileWriter("logy.txt",true);
-			fw.write(sw.toString());
-			close();
-		} catch (IOException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-
-	}
-	public static void close() throws IOException {
-		fw.close();
+	public static void info(String text) {
+		Alert alert = new Alert(AlertType.INFORMATION);
+		alert.setHeaderText("Information");
+		alert.setContentText(text);
+		alert.show();	
 	}
 }

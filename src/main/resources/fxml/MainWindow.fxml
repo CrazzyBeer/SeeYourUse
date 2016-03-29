@@ -12,7 +12,7 @@
 
 <VBox disable="false" minHeight="469.0" minWidth="423.0" prefHeight="470.0" prefWidth="430.0" styleClass="mainBox" stylesheets="css/application.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.SeeYourUse.MainController">
 <children>
-      <MenuBar fx:id="menuBar" style="-fx-background-color: rgba(0,0,0,0);" styleClass="menuBar">
+      <MenuBar fx:id="menuBar" styleClass="menuBar">
          <menus>
             <Menu fx:id="menuGraph" mnemonicParsing="false" text="Graph">
               <items>
@@ -89,7 +89,7 @@
         <content>
           <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
                <children>
-                  <VBox fx:id="messageBox" layoutX="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="400.0" spacing="10.0" style="-fx-background: rgba(0,0,0,0);" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                  <VBox fx:id="messageBox" layoutX="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="400.0" spacing="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
                </children>
             </AnchorPane>
         </content>
