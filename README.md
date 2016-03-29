@@ -24,3 +24,7 @@ This application allows you to post your daily activities and rate them with poi
 * Extensive usage of JavaFX CSS tools
 * Responsive layout
 * Usage of JavaFX Graph
+
+![Main window preview](https://github.com/CrazzyBeer/SeeYourUse/blob/master/src/main/resources/HTML/Images/MainWindow.PNG "Main window preview")
+
+![Graph window preview](https://github.com/CrazzyBeer/SeeYourUse/blob/master/src/main/resources/HTML/Images/GraphWindow.PNG "Graph window preview")
