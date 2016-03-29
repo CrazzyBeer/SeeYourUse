@@ -1,6 +1,10 @@
 #SeeYourUse
 This application allows you to post your daily activities and rate them with points of "use". How much has this activity been useful for you? Also, you can create a graph of your use in a specific period of time
 
+[Click here to preview program HELP](http://htmlpreview.github.io/?https://github.com/CrazzyBeer/SeeYourUse/blob/master/src/main/resources/HTML/Help.html)
+
+**Download**: https://sourceforge.net/projects/seeyouruse
+
 #Built with:
 * **Java**
 * **JavaFX**
@@ -25,6 +29,3 @@ This application allows you to post your daily activities and rate them with poi
 * Responsive layout
 * Usage of JavaFX Graph
 
-![Main window preview](https://github.com/CrazzyBeer/SeeYourUse/blob/master/src/main/resources/HTML/Images/MainWindow.PNG "Main window preview")
-
-![Graph window preview](https://github.com/CrazzyBeer/SeeYourUse/blob/master/src/main/resources/HTML/Images/GraphWindow.PNG "Graph window preview")
