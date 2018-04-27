@@ -1,17 +1,17 @@
-#SeeYourUse
+# SeeYourUse
 This application allows you to post your daily activities and rate them with points of "use". How much has this activity been useful for you? Also, you can create a graph of your use in a specific period of time
 
 [Click here to preview program HELP](http://htmlpreview.github.io/?https://github.com/CrazzyBeer/SeeYourUse/blob/master/src/main/resources/HTML/Help.html)
 
 **Download**: https://sourceforge.net/projects/seeyouruse
 
-#Built with:
+# Built with:
 * **Java**
 * **JavaFX**
 * **Maven**
 * **SQLite**
 
-#Tools provided
+# Tools provided
 * Message writing, rating, adding
 * Viewing messages history
 * Deleting messages, copying them to clipboard
@@ -21,7 +21,7 @@ This application allows you to post your daily activities and rate them with poi
 * Selecting messages in a given period o time
 * Graphing selected messages and points by days
 
-#Basic programming actions
+# Basic programming actions
 * Working with almost all the SQL Language queries (CREATE, INSERT, SELECT, UPDATE, DELETE etc.)
 * Working with SceneBuilder (FXML), Layout and code is divided
 * Working with a basic MVC structure, controller usage
